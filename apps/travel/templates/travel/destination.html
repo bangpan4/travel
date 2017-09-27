@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <a href="/travels">Home</a>
+        <a href="/clear">Logout</a>
+        <h1>{{travel.destination}}</h1>
+        <p>Planned By:</p>
+        <p>Description: {{travel.desc}}</p>
+        <p>Travel Date From: {{travel.start}}</p>
+        <p>Travel Date To: {{travel.end}}</p>
+        <p>other users joining the trip:</p>
+        {% for user in users%}
+            <p>{{user.user.name}}</p>
+        {% endfor %}
+    </body>
+</html>

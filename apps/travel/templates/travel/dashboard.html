@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Travel Dashboard</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Hello, {{user.name}}</h1>
+        <a href="clear">Logout</a>
+        <p>Your trip schedules</p>
+        <table>
+            <tr>
+                <th>Destination</th>
+                <th>Travel Start Date</th>
+                <th>Travel End Date</th>
+                <th>Plan</th>
+            </tr>
+            {% for travel in Travels %}
+            <tr>
+                <td><a href="/destination/{{travel.id}}">{{travel.destination}}</a></td>
+                <td>{{travel.user.start}}</td>
+                <td>{{trave.end}}</td>
+                <td>{{travel.desc}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <p>Other Users Travel Plans</p>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Destination</th>
+                <th>Travel Start Date</th>
+                <th>Travel End Date</th>
+                <th>Do You Want to Join?</th>
+            </tr>
+            {% for travel in travels %}
+            <tr>
+                <td>{{travel.users.name}}</td>
+                <td><a href="/destination/{{travel.id}}">{{travel.destination}}</a></td>
+                <td>{{travel.start}}</td>
+                <td>{{trave.end}}</td>
+                <td>
+                <a href="/addtomylist/{{travel.id}}">Join</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+
+        <a href="/travels/add">Add Travel Plan</a>
+
+    </body>
+</html>

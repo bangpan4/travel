@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Add Plan</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <a href="/travels">Home</a>
+        <a href="/clear">Logout</a>
+        <form action="/createtrip" method="post">
+            {% csrf_token %}
+            <h1>Add a Trip</h1>
+            <p>Destination: <input type="text" name="destination"></p>
+            <p>Description: <input type="text" name="desc"></p>
+            <p>Travel Date From: <input type="date" name="start"></p>
+            <p>Travel Date To: <input type="date" name="end"></p>
+            <input type="submit" value="Add">
+        </form>
+    </body>
+</html>
